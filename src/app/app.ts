@@ -334,11 +334,11 @@ export class App implements OnInit {
 
         animationData.assets.forEach((asset: any) => {
           if (asset.id === homeRefId) {
-            asset.p = ''; // Cleared external URL to prevent CORS/tainted canvas blockage
+            asset.p = '';
             asset.u = '';
             asset.e = 0;
           } else if (asset.id === awayRefId) {
-            asset.p = ''; // Cleared external URL to prevent CORS/tainted canvas blockage
+            asset.p = '';
             asset.u = '';
             asset.e = 0;
           }
