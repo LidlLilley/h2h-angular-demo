@@ -1,199 +1,8 @@
 import { Component, OnInit, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import * as lottieModule from 'lottie-web';
+import lottie from 'lottie-web';
 import { environment } from '../environments/environment';
-
-const lottie = (lottieModule as any).default || lottieModule;
-
-const INLINE_LOTTIE_JSON = {
-  "v": "5.7.6",
-  "fr": 30,
-  "ip": 0,
-  "op": 60,
-  "w": 540,
-  "h": 540,
-  "nm": "H2H Graphic Template",
-  "ddd": 0,
-  "assets": [
-    { "id": "image_crest_home", "w": 100, "h": 100, "u": "", "p": "", "e": 0 },
-    { "id": "image_crest_away", "w": 100, "h": 100, "u": "", "p": "", "e": 0 }
-  ],
-  "layers": [
-    {
-      "ddd": 0,
-      "ind": 1,
-      "ty": 2,
-      "nm": "Image_Crest_Home",
-      "refId": "image_crest_home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 270, 0] }, "s": { "a": 0, "k": [100, 100, 100] } },
-      "ao": 0,
-      "ip": 0,
-      "op": 60,
-      "st": 0,
-      "bm": 0
-    },
-    {
-      "ddd": 0,
-      "ind": 2,
-      "ty": 2,
-      "nm": "Image_Crest_Away",
-      "refId": "image_crest_away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 270, 0] }, "s": { "a": 0, "k": [100, 100, 100] } },
-      "ao": 0,
-      "ip": 0,
-      "op": 60,
-      "st": 0,
-      "bm": 0
-    },
-    {
-      "ddd": 0,
-      "ind": 3,
-      "ty": 5,
-      "nm": "Text_Team_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 180, 0] } },
-      "ao": 0,
-      "text": { "document": { "k": [{ "s": { "s": 24, "f": "Arial", "t": "HOME TEAM", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0,
-      "ind": 4,
-      "ty": 5,
-      "nm": "Text_Team_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 180, 0] } },
-      "ao": 0,
-      "text": { "document": { "k": [{ "s": { "s": 24, "f": "Arial", "t": "AWAY TEAM", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 5, "ty": 5, "nm": "Text_Label_1",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 340, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "LEAGUE POSITION", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 6, "ty": 5, "nm": "Text_Stat_1_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 340, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "1", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 7, "ty": 5, "nm": "Text_Stat_1_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 340, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "2", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 8, "ty": 5, "nm": "Text_Label_2",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 380, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "TOTAL POINTS", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 9, "ty": 5, "nm": "Text_Stat_2_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 380, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 10, "ty": 5, "nm": "Text_Stat_2_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 380, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 11, "ty": 5, "nm": "Text_Label_3",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 420, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "POINTS PER GAME", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 12, "ty": 5, "nm": "Text_Stat_3_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 420, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 13, "ty": 5, "nm": "Text_Stat_3_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 420, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 14, "ty": 5, "nm": "Text_Label_4",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 460, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "WIN RATE", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 15, "ty": 5, "nm": "Text_Stat_4_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 460, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 16, "ty": 5, "nm": "Text_Stat_4_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 460, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 17, "ty": 5, "nm": "Text_Label_5",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 500, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOALS SCORED", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 18, "ty": 5, "nm": "Text_Stat_5_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 500, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 19, "ty": 5, "nm": "Text_Stat_5_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 500, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 20, "ty": 5, "nm": "Text_Label_6",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 540, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOALS CONCEDED", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 21, "ty": 5, "nm": "Text_Stat_6_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 540, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 22, "ty": 5, "nm": "Text_Stat_6_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 540, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 23, "ty": 5, "nm": "Text_Label_7",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 580, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOAL DIFFERENCE", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 24, "ty": 5, "nm": "Text_Stat_7_Home",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 580, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    },
-    {
-      "ddd": 0, "ind": 25, "ty": 5, "nm": "Text_Stat_7_Away",
-      "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 580, 0] } },
-      "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } },
-      "ip": 0, "op": 60, "st": 0, "bm": 0
-    }
-  ]
-};
 
 @Component({
   selector: 'app-root',
@@ -212,7 +21,6 @@ export class App implements OnInit {
   awayTeam: any = null;
 
   private animItem: any = null;
-  private lottieRawJson: any = INLINE_LOTTIE_JSON;
 
   constructor(
     private http: HttpClient,
@@ -301,71 +109,70 @@ export class App implements OnInit {
   }
 
   private initOrUpdateLottie(): void {
-    if (!this.homeTeam || !this.awayTeam || !this.lottieRawJson) return;
+    if (!this.homeTeam || !this.awayTeam) return;
 
     if (this.animItem) {
       this.animItem.destroy();
       this.animItem = null;
     }
 
-    const animationData = JSON.parse(JSON.stringify(this.lottieRawJson));
+    this.http.get<any>('h2h-graphic.json').subscribe({
+      next: (animationData) => {
+        if (!animationData.w || animationData.w === 0) animationData.w = 540;
+        if (!animationData.h || animationData.h === 0) animationData.h = 540;
 
-    if (!animationData.w || animationData.w === 0) animationData.w = 540;
-    if (!animationData.h || animationData.h === 0) animationData.h = 540;
+        if (animationData.assets && animationData.layers) {
+          const homeLayer = animationData.layers.find((l: any) => l.nm === 'Image_Crest_Home');
+          const awayLayer = animationData.layers.find((l: any) => l.nm === 'Image_Crest_Away');
 
-    if (animationData.assets && animationData.layers) {
-      const homeLayer = animationData.layers.find((l: any) => l.nm === 'Image_Crest_Home');
-      const awayLayer = animationData.layers.find((l: any) => l.nm === 'Image_Crest_Away');
+          if (homeLayer && awayLayer) {
+            const homeRefId = homeLayer.refId;
+            let awayRefId = awayLayer.refId;
 
-      if (homeLayer && awayLayer) {
-        const homeRefId = homeLayer.refId;
-        let awayRefId = awayLayer.refId;
+            if (homeRefId === awayRefId) {
+              const originalAsset = animationData.assets.find((a: any) => a.id === homeRefId);
+              if (originalAsset) {
+                const clonedAsset = JSON.parse(JSON.stringify(originalAsset));
+                clonedAsset.id = 'image_crest_away_unique';
+                awayLayer.refId = clonedAsset.id;
+                awayRefId = clonedAsset.id;
+                animationData.assets.push(clonedAsset);
+              }
+            }
 
-        if (homeRefId === awayRefId) {
-          const originalAsset = animationData.assets.find((a: any) => a.id === homeRefId);
-          if (originalAsset) {
-            const clonedAsset = JSON.parse(JSON.stringify(originalAsset));
-            clonedAsset.id = 'image_crest_away_unique';
-            awayLayer.refId = clonedAsset.id;
-            awayRefId = clonedAsset.id;
-            animationData.assets.push(clonedAsset);
+            animationData.assets.forEach((asset: any) => {
+              if (asset.id === homeRefId || asset.id === awayRefId) {
+                asset.p = '';
+                asset.u = '';
+                asset.e = 0;
+              }
+            });
           }
         }
 
-        animationData.assets.forEach((asset: any) => {
-          if (asset.id === homeRefId) {
-            asset.p = '';
-            asset.u = '';
-            asset.e = 0;
-          } else if (asset.id === awayRefId) {
-            asset.p = '';
-            asset.u = '';
-            asset.e = 0;
+        setTimeout(() => {
+          if (!this.templateContainer) return;
+
+          try {
+            this.animItem = lottie.loadAnimation({
+              container: this.templateContainer.nativeElement,
+              renderer: 'svg',
+              loop: true,
+              autoplay: true,
+              animationData: animationData
+            });
+
+            this.animItem.addEventListener('DOMLoaded', () => {
+              this.updateDynamicTextLayers();
+              this.applyStatHighlighting();
+            });
+          } catch (e) {
+            console.error('Lottie load error:', e);
           }
-        });
-      }
-    }
-
-    setTimeout(() => {
-      if (!this.templateContainer) return;
-
-      try {
-        this.animItem = lottie.loadAnimation({
-          container: this.templateContainer.nativeElement,
-          renderer: 'svg',
-          loop: true,
-          autoplay: true,
-          animationData: animationData
-        });
-
-        this.animItem.addEventListener('DOMLoaded', () => {
-          this.updateDynamicTextLayers();
-          this.applyStatHighlighting();
-        });
-      } catch (e) {
-        console.error('Lottie load error:', e);
-      }
-    }, 50);
+        }, 50);
+      },
+      error: (err) => console.error('Failed to load Lottie JSON asset', err)
+    });
   }
 
   private updateDynamicTextLayers(): void {
