@@ -1,0 +1,19 @@
+/* Target Home and Away Stat Numbers specifically */
+[data-name*="Text_Stat_"] text,
+[data-name*="Text_Stat_"] tspan {
+  letter-spacing: 4px !important;
+}
+
+/* Force Lottie container and SVG renderer to fill dimensions */
+#templateContainer {
+  width: 540px !important;
+  height: 540px !important;
+  min-width: 540px !important;
+  min-height: 540px !important;
+  display: block;
+}
+
+#templateContainer svg {
+  width: 100% !important;
+  height: 100% !important;
+}
