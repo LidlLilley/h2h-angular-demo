@@ -1,4 +1,4 @@
 <!-- Lottie Motion Graphic Player Container -->
-    <div *ngIf="homeTeam && awayTeam" style="display: flex; justify-content: center; background: #1e293b; padding: 24px; border-radius: 12px; border: 1px solid #334155;">
+    <div [style.display]="(homeTeam && awayTeam) ? 'flex' : 'none'" style="justify-content: center; background: #1e293b; padding: 24px; border-radius: 12px; border: 1px solid #334155;">
       <div #templateContainer id="lottie-container" style="width: 540px; height: 540px; max-width: 100%; position: relative;"></div>
     </div>
