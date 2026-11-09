@@ -116,7 +116,7 @@ export class App implements OnInit {
       this.animItem = null;
     }
 
-    this.http.get<any>('h2h-graphic.json').subscribe({
+    this.http.get<any>('assets/h2h-graphic.json').subscribe({
       next: (animationData) => {
         if (!animationData.w || animationData.w === 0) animationData.w = 540;
         if (!animationData.h || animationData.h === 0) animationData.h = 540;
