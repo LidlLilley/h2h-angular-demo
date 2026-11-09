@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import lottie from 'lottie-web';
 import { environment } from '../environments/environment';
 
+const lottieEngine = (lottie as any).default || lottie;
+
 const DIRECT_LOTTIE_DATA = {
   "v": "5.7.6",
   "fr": 30,
@@ -200,7 +202,7 @@ export class App implements OnInit {
       }
 
       try {
-        this.animItem = lottie.loadAnimation({
+        this.animItem = lottieEngine.loadAnimation({
           container: containerEl,
           renderer: 'svg',
           loop: true,
@@ -213,7 +215,7 @@ export class App implements OnInit {
           this.applyStatHighlighting();
         });
       } catch (e) {
-        console.error('Lottie load error:', e);
+        console.error('Lottie load error exception:', e);
       }
     }, 50);
   }
