@@ -20,31 +20,48 @@ const DIRECT_LOTTIE_DATA = {
     { "id": "image_crest_away", "w": 100, "h": 100, "u": "", "p": "", "e": 0 }
   ],
   "layers": [
-    { "ddd": 0, "ind": 1, "ty": 2, "nm": "Image_Crest_Home", "refId": "image_crest_home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 270, 0] }, "s": { "a": 0, "k": [100, 100, 100] } }, "ao": 0, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 2, "ty": 2, "nm": "Image_Crest_Away", "refId": "image_crest_away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 270, 0] }, "s": { "a": 0, "k": [100, 100, 100] } }, "ao": 0, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 3, "ty": 5, "nm": "Text_Team_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 180, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 24, "f": "Arial", "t": "HOME TEAM", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 4, "ty": 5, "nm": "Text_Team_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 180, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 24, "f": "Arial", "t": "AWAY TEAM", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 5, "ty": 5, "nm": "Text_Label_1", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 340, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "LEAGUE POSITION", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 6, "ty": 5, "nm": "Text_Stat_1_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 340, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "1", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 7, "ty": 5, "nm": "Text_Stat_1_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 340, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "2", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 8, "ty": 5, "nm": "Text_Label_2", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "TOTAL POINTS", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 9, "ty": 5, "nm": "Text_Stat_2_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 10, "ty": 5, "nm": "Text_Stat_2_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 11, "ty": 5, "nm": "Text_Label_3", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 420, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "POINTS PER GAME", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 12, "ty": 5, "nm": "Text_Stat_3_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 420, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 13, "ty": 5, "nm": "Text_Stat_3_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 420, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 14, "ty": 5, "nm": "Text_Label_4", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 460, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "WIN RATE", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 15, "ty": 5, "nm": "Text_Stat_4_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 460, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 16, "ty": 5, "nm": "Text_Stat_4_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 460, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 17, "ty": 5, "nm": "Text_Label_5", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 500, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOALS SCORED", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 18, "ty": 5, "nm": "Text_Stat_5_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 500, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 19, "ty": 5, "nm": "Text_Stat_5_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 500, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 20, "ty": 5, "nm": "Text_Label_6", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 540, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOALS CONCEDED", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 21, "ty": 5, "nm": "Text_Stat_6_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 540, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 22, "ty": 5, "nm": "Text_Stat_6_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 540, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 23, "ty": 5, "nm": "Text_Label_7", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 580, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 16, "f": "Arial", "t": "GOAL DIFFERENCE", "j": 1, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 24, "ty": 5, "nm": "Text_Stat_7_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 580, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
-    { "ddd": 0, "ind": 25, "ty": 5, "nm": "Text_Stat_7_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 580, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 20, "f": "Arial", "t": "0", "j": 1, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 }
+    {
+      "ddd": 0, "ind": 1, "ty": 4, "nm": "Background_Card",
+      "ks": {
+        "o": { "a": 0, "k": 100 },
+        "p": { "a": 0, "k": [270, 270, 0] },
+        "s": { "a": 0, "k": [100, 100, 100] }
+      },
+      "shapes": [
+        {
+          "ty": "rect",
+          "nm": "Card_BG",
+          "p": { "a": 0, "k": [0, 0] },
+          "s": { "a": 0, "k": [500, 500] },
+          "r": { "a": 0, "k": 20 }
+        },
+        {
+          "ty": "fl",
+          "c": { "a": 0, "k": [0.11, 0.16, 0.27, 1] },
+          "o": { "a": 0, "k": 100 }
+        }
+      ],
+      "ip": 0, "op": 60, "st": 0, "bm": 0
+    },
+    { "ddd": 0, "ind": 2, "ty": 2, "nm": "Image_Crest_Home", "refId": "image_crest_home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 150, 0] }, "s": { "a": 0, "k": [80, 80, 100] } }, "ao": 0, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 3, "ty": 2, "nm": "Image_Crest_Away", "refId": "image_crest_away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 150, 0] }, "s": { "a": 0, "k": [80, 80, 100] } }, "ao": 0, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 4, "ty": 5, "nm": "Text_Team_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 230, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 22, "f": "Arial", "t": "HOME TEAM", "j": 2, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 5, "ty": 5, "nm": "Text_Team_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 230, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 22, "f": "Arial", "t": "AWAY TEAM", "j": 2, "fc": [1, 1, 1], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 6, "ty": 5, "nm": "Text_Label_1", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 290, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 14, "f": "Arial", "t": "LEAGUE POSITION", "j": 2, "fc": [0.58, 0.64, 0.72], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 7, "ty": 5, "nm": "Text_Stat_1_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 290, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "1", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 8, "ty": 5, "nm": "Text_Stat_1_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 290, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "2", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 9, "ty": 5, "nm": "Text_Label_2", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 335, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 14, "f": "Arial", "t": "TOTAL POINTS", "j": 2, "fc": [0.58, 0.64, 0.72], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 10, "ty": 5, "nm": "Text_Stat_2_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 335, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 11, "ty": 5, "nm": "Text_Stat_2_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 335, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 12, "ty": 5, "nm": "Text_Label_3", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 14, "f": "Arial", "t": "POINTS PER GAME", "j": 2, "fc": [0.58, 0.64, 0.72], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 13, "ty": 5, "nm": "Text_Stat_3_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 14, "ty": 5, "nm": "Text_Stat_3_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 380, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 15, "ty": 5, "nm": "Text_Label_4", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 425, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 14, "f": "Arial", "t": "WIN RATE", "j": 2, "fc": [0.58, 0.64, 0.72], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 16, "ty": 5, "nm": "Text_Stat_4_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 425, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 17, "ty": 5, "nm": "Text_Stat_4_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 425, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 18, "ty": 5, "nm": "Text_Label_5", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [270, 470, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 14, "f": "Arial", "t": "GOALS SCORED", "j": 2, "fc": [0.58, 0.64, 0.72], "tr": 40 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 19, "ty": 5, "nm": "Text_Stat_5_Home", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [135, 470, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 },
+    { "ddd": 0, "ind": 20, "ty": 5, "nm": "Text_Stat_5_Away", "ks": { "o": { "a": 0, "k": 100 }, "p": { "a": 0, "k": [405, 470, 0] } }, "ao": 0, "text": { "document": { "k": [{ "s": { "s": 18, "f": "Arial", "t": "0", "j": 2, "fc": [1, 1, 1], "tr": 140 } }] } }, "ip": 0, "op": 60, "st": 0, "bm": 0 }
   ]
 };
 
@@ -254,9 +271,7 @@ export class App implements OnInit {
       { label: 'TOTAL POINTS', homeStr: String(this.homeTeam.points), awayStr: String(this.awayTeam.points) },
       { label: 'POINTS PER GAME', homeStr: String(this.homeTeam.ppg), awayStr: String(this.awayTeam.ppg) },
       { label: 'WIN RATE', homeStr: String(this.homeTeam.winRate), awayStr: String(this.awayTeam.winRate) },
-      { label: 'GOALS SCORED', homeStr: String(this.homeTeam.goalsFor), awayStr: String(this.awayTeam.goalsFor) },
-      { label: 'GOALS CONCEDED', homeStr: String(this.homeTeam.goalsAgainst), awayStr: String(this.awayTeam.goalsAgainst) },
-      { label: 'GOAL DIFFERENCE', homeStr: `${this.homeTeam.goalDifference > 0 ? '+' : ''}${this.homeTeam.goalDifference}`, awayStr: `${this.awayTeam.goalDifference > 0 ? '+' : ''}${this.awayTeam.goalDifference}` }
+      { label: 'GOALS SCORED', homeStr: String(this.homeTeam.goalsFor), awayStr: String(this.awayTeam.goalsFor) }
     ];
 
     statsMap.forEach((stat, index) => {
@@ -277,9 +292,7 @@ export class App implements OnInit {
       { row: 2, homeVal: this.homeTeam.points, awayVal: this.awayTeam.points, lowerIsBetter: false },
       { row: 3, homeVal: Number(this.homeTeam.ppg), awayVal: Number(this.awayTeam.ppg), lowerIsBetter: false },
       { row: 4, homeVal: this.homeTeam.winRateNum, awayVal: this.awayTeam.winRateNum, lowerIsBetter: false },
-      { row: 5, homeVal: this.homeTeam.goalsFor, awayVal: this.awayTeam.goalsFor, lowerIsBetter: false },
-      { row: 6, homeVal: this.homeTeam.goalsAgainst, awayVal: this.awayTeam.goalsAgainst, lowerIsBetter: true },
-      { row: 7, homeVal: this.homeTeam.goalDifference, awayVal: this.awayTeam.goalDifference, lowerIsBetter: false }
+      { row: 5, homeVal: this.homeTeam.goalsFor, awayVal: this.awayTeam.goalsFor, lowerIsBetter: false }
     ];
 
     statsConfig.forEach((cfg) => {
