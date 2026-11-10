@@ -1,4 +1,35 @@
-<!-- Lottie Motion Graphic Player Container -->
-    <div [style.display]="(homeTeam && awayTeam) ? 'flex' : 'none'" style="justify-content: center; background: #1e293b; padding: 24px; border-radius: 12px; border: 1px solid #334155;">
-      <div #templateContainer id="lottie-container" style="width: 540px; height: 540px; max-width: 100%; position: relative;"></div>
+<div class="page-wrapper">
+  <header class="header">
+    <h1 class="title">H2H MATCHUP ENGINE</h1>
+    <p class="subtitle">Live Premier League Data via C# .NET API</p>
+  </header>
+
+  <div class="main-container">
+    <div class="selectors-grid">
+      <div class="selector-card">
+        <label class="selector-label">SELECT HOME TEAM</label>
+        <select (change)="onHomeSelect($event)" class="team-select">
+          <option value="">-- Choose Home Team --</option>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
+      </div>
+
+      <div class="selector-card">
+        <label class="selector-label">SELECT AWAY TEAM</label>
+        <select (change)="onAwaySelect($event)" class="team-select">
+          <option value="">-- Choose Away Team --</option>
+          <option *ngFor="let team of teams" [value]="team.id">{{ team.name }}</option>
+        </select>
+      </div>
     </div>
+
+    <!-- Lottie Graphic Canvas Container -->
+    <div class="canvas-card">
+      <div id="templateContainer" #templateContainer>
+        <div *ngIf="!homeTeam || !awayTeam" class="placeholder-text">
+          Select both teams to generate H2H graphic
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
