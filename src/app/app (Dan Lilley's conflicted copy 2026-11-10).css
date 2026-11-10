@@ -1,0 +1,119 @@
+.page-wrapper {
+  min-height: 100vh;
+  background-color: #0b1120;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 6px 0 0 0;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectors-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.selector-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.selector-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.team-select {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.team-select:focus {
+  border-color: #6366f1;
+}
+
+.canvas-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+#templateContainer {
+  width: 540px !important;
+  height: 540px !important;
+  min-width: 540px !important;
+  min-height: 540px !important;
+  background-color: #0f172a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.placeholder-text {
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+::ng-deep #templateContainer svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+::ng-deep [data-name*="Text_Stat_"] text,
+::ng-deep [data-name*="Text_Stat_"] tspan {
+  letter-spacing: 4px !important;
+}

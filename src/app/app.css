@@ -114,6 +114,8 @@
 }
 
 ::ng-deep [data-name*="Text_Stat_"] text,
-::ng-deep [data-name*="Text_Stat_"] tspan {
+::ng-deep [data-name*="Text_Stat_"] tspan,
+::ng-deep [data-name*="Text_Team_"] text,
+::ng-deep [data-name*="Text_Team_"] tspan {
   letter-spacing: 4px !important;
 }

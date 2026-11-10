@@ -22,7 +22,6 @@ export class App implements OnInit {
   private animItem: any = null;
   private lottieRawJson: any = null;
 
-  // Adjust these two tracking numbers if you want them wider or tighter
   private readonly teamTracking = 80;
   private readonly statTracking = 120;
 
@@ -66,11 +65,19 @@ export class App implements OnInit {
           const rawName = entry.team?.name || entry.team?.shortName || '';
           const cleanName = rawName.replace(/\b(FC|AFC|F\.C\.)\b/gi, '').trim();
 
+          const isSpurs =
+            entry.team?.id === 73 ||
+            cleanName.toLowerCase().includes('tottenham') ||
+            rawName.toLowerCase().includes('tottenham');
+
+          const ppgFixed = (entry.points / played).toFixed(2);
+          const winRateRounded = Math.round((entry.won / played) * 100);
+
           return {
             id: entry.team?.id,
             name: cleanName,
             code: (entry.team?.tla || entry.team?.shortName || cleanName.substring(0, 3)).toUpperCase(),
-            crest: entry.team?.crest,
+            crest: isSpurs ? '/tottenham-white.png' : entry.team?.crest,
             position: entry.position,
             points: entry.points,
             played: played,
@@ -80,10 +87,10 @@ export class App implements OnInit {
             goalsFor: entry.goalsFor,
             goalsAgainst: entry.goalsAgainst,
             goalDifference: entry.goalDifference,
-            ppgNum: entry.points / played,
-            winRateNum: (entry.won / played) * 100,
-            ppg: (entry.points / played).toFixed(2),
-            winRate: Math.round((entry.won / played) * 100) + '%',
+            ppgNum: Number(ppgFixed),
+            winRateNum: winRateRounded,
+            ppg: ppgFixed,
+            winRate: winRateRounded + '%',
             goalsPerGame: (entry.goalsFor / played).toFixed(2),
             form: formArray
           };
@@ -136,6 +143,12 @@ export class App implements OnInit {
     ];
   }
 
+  private resolveCrestUrl(team: any): string {
+    if (!team) return '';
+    const isSpurs = team.id === 73 || String(team.name || '').toLowerCase().includes('tottenham');
+    return isSpurs ? '/tottenham-white.png' : team.crest;
+  }
+
   private initOrUpdateLottie(): void {
     if (!this.homeTeam || !this.awayTeam || !this.lottieRawJson) return;
 
@@ -165,20 +178,22 @@ export class App implements OnInit {
           }
         }
 
+        const homeCrestUrl = this.resolveCrestUrl(this.homeTeam);
+        const awayCrestUrl = this.resolveCrestUrl(this.awayTeam);
+
         animationData.assets.forEach((asset: any) => {
           if (asset && asset.id === homeRefId) {
-            asset.p = this.homeTeam.crest;
+            asset.p = homeCrestUrl;
             asset.u = '';
             asset.e = 1;
           } else if (asset && asset.id === awayRefId) {
-            asset.p = this.awayTeam.crest;
+            asset.p = awayCrestUrl;
             asset.u = '';
             asset.e = 1;
           }
         });
       }
 
-      // Pre-populate text and tracking ('tr') directly in JSON before rendering
       const setJsonLayerText = (layerName: string, value: string, tracking?: number) => {
         const layer = animationData.layers.find((l: any) => l.nm === layerName);
         if (layer?.t?.d?.k?.[0]?.s) {
@@ -189,11 +204,9 @@ export class App implements OnInit {
         }
       };
 
-      // Team names: increase tracking
       setJsonLayerText('Text_Team_Home', this.homeTeam.name, this.teamTracking);
       setJsonLayerText('Text_Team_Away', this.awayTeam.name, this.teamTracking);
 
-      // Stat labels stay at default tracking; Home & Away stat values get increased tracking
       this.getStatsMap().forEach((stat, index) => {
         const rowNum = index + 1;
         setJsonLayerText(`Text_Label_${rowNum}`, stat.label);
@@ -216,27 +229,8 @@ export class App implements OnInit {
       this.animItem.addEventListener('DOMLoaded', () => {
         this.updateDynamicTextLayers();
         this.applyStatHighlighting();
-        this.applyCrestFilters();
       });
     }, 50);
-  }
-
-  private applyCrestFilters(): void {
-    if (!this.templateContainer || !this.homeTeam || !this.awayTeam) return;
-    const rootEl = this.templateContainer.nativeElement as HTMLElement;
-
-    const filterTeamCrest = (layerName: string, team: any) => {
-      const isSpurs = team.id === 73 || team.name.toLowerCase().includes('tottenham');
-      const container = rootEl.querySelector(`[data-name="${layerName}"], .${layerName}, #${layerName}`);
-      if (container) {
-        const imageNode = container.querySelector('image') as SVGImageElement;
-        if (imageNode) {
-          imageNode.style.filter = isSpurs ? 'brightness(0) invert(1)' : 'none';
-        }
-      }
-    };
-    filterTeamCrest('Image_Crest_Home', this.homeTeam);
-    filterTeamCrest('Image_Crest_Away', this.awayTeam);
   }
 
   private updateDynamicTextLayers(): void {
@@ -317,8 +311,9 @@ export class App implements OnInit {
           if (el.layerElement) {
             const layerNode = el.layerElement as HTMLElement;
             layerNode.style.opacity = isWinning ? '1' : '0.35';
-            const textNodes = layerNode.querySelectorAll('text, tspan');
-            textNodes.forEach((node: any) => {
+            layerNode.setAttribute('opacity', isWinning ? '1' : '0.35');
+            const childNodes = layerNode.querySelectorAll('text, tspan, path');
+            childNodes.forEach((node: any) => {
               node.setAttribute('fill', isWinning ? '#ffffff' : '#94a3b8');
               node.style.opacity = isWinning ? '1' : '0.35';
             });
@@ -336,7 +331,10 @@ export class App implements OnInit {
   }
 
   isWinningStat(val1: number, val2: number, lowerIsBetter: boolean = false): boolean {
-    if (val1 === val2 || val1 == null || val2 == null) return false;
-    return lowerIsBetter ? val1 < val2 : val1 > val2;
+    if (val1 == null || val2 == null) return false;
+    const n1 = Number(val1);
+    const n2 = Number(val2);
+    if (n1 === n2) return true;
+    return lowerIsBetter ? n1 < n2 : n1 > n2;
   }
 }
