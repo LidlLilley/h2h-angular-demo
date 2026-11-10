@@ -119,3 +119,30 @@
 ::ng-deep [data-name*="Text_Team_"] tspan {
   letter-spacing: 4px !important;
 }
+
+/* Mobile Optimisation: Stack selectors & scale canvas */
+@media (max-width: 640px) {
+  .page-wrapper {
+    padding: 16px 12px;
+  }
+
+  .selectors-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .canvas-card {
+    padding: 16px 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #templateContainer {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+}
